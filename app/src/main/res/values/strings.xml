@@ -5,5 +5,5 @@
     <string name="password_placeholder">Password</string>
     <string name="textfield_optional">Optional</string>
     <string name="textfield_required">Required</string>
-    <string name="password_requirements">Password mut contains at least one upper case and one special character and one number.</string>
+    <string name="password_requirements">Password must contains at least one upper case and one special character and one number.</string>
 </resources>

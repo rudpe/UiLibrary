@@ -6,18 +6,15 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.uilibrary.ui.components.PasswordInput
 import com.example.uilibrary.ui.theme.UiLibraryTheme
@@ -33,7 +30,8 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding),
-                        verticalArrangement = Arrangement.SpaceAround
+                        verticalArrangement = Arrangement.Top,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         val viewModel by viewModels<MainViewModel>()
                         val password by viewModel.password.collectAsStateWithLifecycle()
@@ -41,10 +39,10 @@ class MainActivity : ComponentActivity() {
                         PasswordInput(
                             onValueChange = { viewModel.onPasswordChange(it) },
                             value = password,
-                            modifier = Modifier.padding(32.dp),
+                            modifier = Modifier.padding(top = dimensionResource(R.dimen.l)),
                             label = stringResource(R.string.password_label),
                             placeholder = stringResource(R.string.password_placeholder),
-                            isError = !isPasswordValid
+                            isError = !isPasswordValid,
                         )
                     }
                 }

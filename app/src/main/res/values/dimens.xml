@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_input">12dp</dimen>
+
+    <dimen name="xs">8dp</dimen>
+    <dimen name="s">12dp</dimen>
+    <dimen name="m">16dp</dimen>
+    <dimen name="l">20dp</dimen>
+</resources>
